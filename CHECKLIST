@@ -1,0 +1,48 @@
+Launch Checklist
+
+In order to launch we should:
+
+- [ ] Turn on Travis CI for the track
+- [ ] Add LANGUAGE as a submodule in [x-api](https://github.com/exercism/x-api/tree/master/problems)
+- [ ] Implement at least 10 problems
+- [ ] Write documentation (see below)
+- [ ] Find a person or (ideally) a handful of people willing to check exercism regularly (daily?) to review solutions
+- [ ] Add track implementors and other designated code reviewers as mentors to the track. This gives you access to all the solutions in LANGUAGE whether or not you've submitted the problem to the site.
+- [ ] Add a language icon or logo (see below)
+- [ ] Toggle `"active"` to `true` in `config.json`
+- [ ] Mention it in the next "Behind the Scenes" newsletter (kytrinyx)
+
+## Documentation
+
+The documentation lives in the `docs/` directory here in this repository, and gets served to the site via the x-api. It should contain at minimim:
+
+- `INSTALLATION.md` - about how to get the language set up locally.
+- `TESTS.md` - about how to run the tests for the exercises.
+
+Some nice to haves:
+
+- `ABOUT.md` - a short, friendly blurb about the language. What types of problems does it solve really well? What is it typically used for?
+- `LEARNING.md` - a few notes about where people might want to go to learn the language from scratch.
+- `RESOURCES.md` - references and other useful resources.
+
+## Logo/Icon
+
+We try to create a language icon that has the exercism colors, and is recognizably similar to the language icon. Sometimes this isn't possible due to copyright issues. See http://exercism.io/languages for all the existing icons.
+
+The logo should live under `/public/img/tracks/` in the exercism/exercism.io repository.
+https://github.com/exercism/exercism.io/tree/master/public/img/tracks
+
+Attribution goes in https://github.com/exercism/exercism.io/blob/master/ATTRIBUTION.md
+
+If image assets are not your strong suit, just find a reasonable image to start from, along with the information about the licensing, and we'll figure out the colorization thing (I've written some scripts to help me do this part).
+
+Some icons are the official language logo (tweaked). Where a language doesn't seem to have an official logo, or where the official logo has copyright issues, we just make something up.
+
+## Successful Launches
+
+Some tracks have been more successful than others, and I believe the key features of the successful tracks are:
+
+* Each submission receives feedback quickly, preferably within the first 24 hours.
+* The code reviews do not direct users to do specific things, but rather ask questions challenging people to think about different aspects of their solution, or explore aspects of the language. Referencing existing blog posts and style guides seems to work well, when making specific recommendations.
+
+For more about contributing to language tracks on exercism, check out the Problem API Contributing guide: https://github.com/exercism/x-api/blob/master/CONTRIBUTING.md
