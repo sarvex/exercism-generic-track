@@ -3,11 +3,11 @@ Launch Checklist
 In order to launch we should:
 
 - [ ] Turn on Travis CI for the track
-- [ ] Add LANGUAGE as a submodule in [x-api](https://github.com/exercism/x-api/tree/master/problems)
+- [ ] Add LANGUAGE as a submodule in [x-api](https://github.com/exercism/x-api/tree/master/tracks)
 - [ ] Implement at least 10 problems
 - [ ] Write documentation (see below)
 - [ ] Find a person or (ideally) a handful of people willing to check exercism regularly (daily?) to review solutions
-- [ ] Add track implementors and other designated code reviewers as mentors to the track. This gives you access to all the solutions in LANGUAGE whether or not you've submitted the problem to the site.
+- [ ] Add track implementors and other designated code reviewers as mentors to the track. This gives you access to all the solutions in LANGUAGE whether or not you've submitted the problem to the site. The first track mentor needs to be added manually by kytrinyx, but after that there's a section in the account where existing track mentors can invite new ones.
 - [ ] Add a language icon or logo (see below)
 - [ ] Toggle `"active"` to `true` in `config.json`
 - [ ] Mention it in the next "Behind the Scenes" newsletter (kytrinyx)

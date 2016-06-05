@@ -1,0 +1,11 @@
+Test the tests
+
+Implement a test suite that can run both locally and on Travis CI, that verifies that the example code passes the test suite for each exercise..
+
+Things to consider:
+
+If some tests are marked as skipped or pending in some way, then CI should remove these annotations so that all the tests run against the example, not just the first test.
+
+If we need to rewrite the files in any way, we should copy the exercise to a tmp directory first, so that we don't accidentally end up committing changes that are just for continuous integration or testing purposes.
+
+We should make it possible to test just one exercise at a time, because testing everything can take a while.
