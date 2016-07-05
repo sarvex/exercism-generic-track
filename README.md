@@ -14,5 +14,5 @@ Please see the [contributing guide](https://github.com/exercism/x-api/blob/maste
 
 The MIT License (MIT)
 
-Copyright (c) 2015 Katrina Owen, _@kytrinyx.com
+Copyright (c) 2016 Katrina Owen, _@kytrinyx.com
 
