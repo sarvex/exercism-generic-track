@@ -29,14 +29,24 @@ Some nice to haves:
 
 We try to create a language icon that has the exercism colors, and is recognizably similar to the language icon. Sometimes this isn't possible due to copyright issues. See http://exercism.io/languages for all the existing icons.
 
-The logo should live under `/public/img/tracks/` in the exercism/exercism.io repository.
-https://github.com/exercism/exercism.io/tree/master/public/img/tracks
-
-Attribution goes in https://github.com/exercism/exercism.io/blob/master/ATTRIBUTION.md
+We're in the process of moving each individual language track icon into the specific language track repository. Putting all the language-specific stuff together makes it easier to manage. In the meanwhile, we need to have everything in two places.
 
 If image assets are not your strong suit, just find a reasonable image to start from, along with the information about the licensing, and we'll figure out the colorization thing (I've written some scripts to help me do this part).
 
 Some icons are the official language logo (tweaked). Where a language doesn't seem to have an official logo, or where the official logo has copyright issues, we just make something up.
+
+**exercism.io**
+
+The logo should be named `SLUG.png` and live in `/public/img/tracks/` in the exercism/exercism.io repository.
+https://github.com/exercism/exercism.io/tree/master/public/img/tracks
+
+Attribution goes in https://github.com/exercism/exercism.io/blob/master/ATTRIBUTION.md
+
+**xSLUG**
+
+The logo should be named `icon.png` and live under `img/` in this repository. If you know how, go ahead and make an SVG as well.
+
+Attribution goes in the README.md file.
 
 ## Successful Launches
 
