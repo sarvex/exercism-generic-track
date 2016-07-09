@@ -2,8 +2,8 @@ Launch Checklist
 
 In order to launch we should:
 
-- [ ] Turn on Travis CI for the track
-- [ ] Add LANGUAGE as a submodule in [x-api](https://github.com/exercism/x-api/tree/master/tracks)
+- [ ] Turn on Travis CI for the track (kytrinyx)
+- [ ] Add LANGUAGE as a submodule in [x-api](https://github.com/exercism/x-api/tree/master/tracks) (kytrinyx)
 - [ ] Implement at least 10 problems
 - [ ] Write documentation (see below)
 - [ ] Find a person or (ideally) a handful of people willing to check exercism regularly (daily?) to review solutions
