@@ -1,10 +1,10 @@
 {
-  "slug": "SLUG",
-  "language": "LANGUAGE",
-  "repository": "https://github.com/exercism/xSLUG",
+  "slug": "{{TRACK_ID}}",
+  "language": "{{LANGUAGE}}",
+  "repository": "https://github.com/exercism/x{{TRACK_ID}}",
   "active": false,
   "test_pattern": "TODO",
-  "problems": [
+  "exercises": [
 
   ],
   "deprecated": [
@@ -12,6 +12,7 @@
   ],
   "ignored": [
     "bin",
+    "img",
     "docs"
   ],
   "foregone": [
