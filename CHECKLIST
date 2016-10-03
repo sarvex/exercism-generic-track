@@ -1,28 +1,88 @@
 Launch Checklist
 
-In order to launch we should:
+## Step 0: Prep the Repo (@kytrinyx)
 
-- [ ] Turn on Travis CI for the track (kytrinyx)
-- [ ] Add {{LANGUAGE}} as a submodule in [x-api](https://github.com/exercism/x-api/tree/master/tracks) (kytrinyx)
-- [ ] Define `test_pattern` in `config.json` (see below)
-- [ ] Implement at least 10 problems (See the [guide](https://github.com/exercism/x-common/blob/master/CONTRIBUTING.md#porting-an-exercise-to-another-language-track))
-- [ ] Write documentation (see below)
-- [ ] Find a person or (ideally) a handful of people willing to check exercism regularly (daily?) to review solutions
-- [ ] Add track implementors and other designated code reviewers as mentors to the track. This gives you access to all the solutions in {{LANGUAGE}} whether or not you've submitted the problem to the site. The first track mentor needs to be added manually by kytrinyx, but after that there's a section in the account where existing track mentors can invite new ones.
-- [ ] Add a language icon or logo (see below) + attribution (in README)
-- [ ] Read the maintainer docs:
-      - [Maintaining a Track](https://github.com/exercism/exercism.io/blob/master/docs/maintaining-a-track.md)
-      - [Reviewing a Pull Request](https://github.com/exercism/exercism.io/blob/master/docs/reviewing-a-pull-request.md)
-- [ ] Toggle `"active"` to `true` in `config.json`
-- [ ] Mention it in the next "Behind the Scenes" newsletter (kytrinyx)
+- [x] Create the repository
+- [x] Create starter issues
+- [ ] Turn on Travis CI for the track
 
-## Test Pattern
+## Step 1: Implement Exercises
 
-The `config.json` has a key, `"test_pattern"` which should be a string that can be compiled as a regex matching the pattern for a test file in this track. If the test files contain the word "test" (case insensitive) then the `"test_pattern"` key can be deleted.
+- [ ] Implement at least 10 problems
 
-## Documentation
+See the [contributing guide](https://github.com/exercism/x-common/blob/master/CONTRIBUTING.md#porting-an-exercise-to-another-language-track) for the details about the format of an exercise.
 
-The documentation lives in the `docs/` directory here in this repository, and gets served to the site via the x-api. It should contain at minimim:
+The short version is:
+
+* a test suite
+* an example solution, named with `example` (case-insensitive) in the filename
+* a section in the "exercises" key of the config.json file with the slug, topics, and difficulty level.
+
+The topics can be an empty list, and the difficulty level is from 1 to 10, and can default to 1 until we know more about the exercises.
+
+```
+"exercises": [
+  {
+    "slug": "hello-world" ,
+    "difficulty": 1,
+    "topics": []
+  }
+]
+```
+
+## Step 2: Add the Track to Exercism (@kytrinyx)
+
+- [x] Add {{LANGUAGE}} as a submodule in [trackler](https://github.com/exercism/trackler/tree/master/tracks)
+- [x] Update x-api and deploy
+
+This means that it will show up on http://exercism.io/languages and http://exercism.io/languages/{{SLUG}}
+
+## Step 3: Make the Track Ready for Launch
+
+- [ ] Define `test_pattern` in `config.json`
+- [ ] Add a language icon or logo + attribution
+- [ ] Write documentation
+- [ ] Find track mentors
+- [ ] Add track mentors on the site (@kytrinyx)
+
+### test_pattern
+
+The exercism.io website links to the exercise implementations, so it needs to know how to recognize the filename(s) for the test suite.
+
+The `"test_pattern"` value in the `config.json` file should be a string that can be compiled as a regular expression, and which will match on the file or files that comprise the test suite of an exercise.
+
+If the test filenames contain the word "test" (case insensitive) then the `"test_pattern"` key can be deleted.
+
+### Language Icon and Attribution
+
+We try to create a language icon that has the exercism colors, and is recognizably similar to the language icon. Sometimes this isn't possible due to copyright issues.
+
+The Exercism colors are:
+
+* `#D81D4E` (pink)
+* `#212121` (charcoal)
+
+The icon is used throughout the site in order to identify the language track, and to identify code that has been submitted to that track.
+
+See http://exercism.io/languages for all the existing icons.
+
+**Icon**
+
+If image assets are not your strong suit, just find a reasonable image to start from, along with the information about the licensing, and we'll figure out the colorization thing (I've written some scripts to help me do this part).
+
+The logo should be named `icon.png` and live under `img/` in this repository. If you know how, go ahead and make an SVG as well.
+
+**Attribution**
+
+The attribution goes in the `README.md` file.
+
+If the icon we have based this on is not in the public domain, we need to provide information about license and provenance. If we require permission to use and/or change the icon, then we need to obtain that permission before we can use it.
+
+### Documentation
+
+The documentation is used in the http://exercism.io/languages/{{SLUG}} section to help people get started with the track.
+
+The files live in the `docs/` directory here in this repository, and gets served to the site via the x-api. It should contain at minimum:
 
 - `INSTALLATION.md` - about how to get the language set up locally.
 - `TESTS.md` - about how to run the tests for the exercises.
@@ -33,34 +93,37 @@ Some nice to haves:
 - `LEARNING.md` - a few notes about where people might want to go to learn the language from scratch.
 - `RESOURCES.md` - references and other useful resources.
 
-## Logo/Icon
+### Find Track Mentors
 
-We try to create a language icon that has the exercism colors, and is recognizably similar to the language icon. Sometimes this isn't possible due to copyright issues. See http://exercism.io/languages for all the existing icons.
+Usually in order to see someone's solution you have to have submitted the exercise yourself. Track mentors can access all of the solutions in a given language. Track mentors can therefore help review solutions that people submit on the website in the beginning when few people have submitted solutions to exercises.
 
-We're in the process of moving each individual language track icon into the specific language track repository. Putting all the language-specific stuff together makes it easier to manage. In the meanwhile, we need to have everything in two places.
+Ideally we should have a handful of people who are willing to check Exercism regularly to give people feedback, in order to start the track off on the right note.
 
-If image assets are not your strong suit, just find a reasonable image to start from, along with the information about the licensing, and we'll figure out the colorization thing (I've written some scripts to help me do this part).
+The first track mentor needs to be added manually by @kytrinyx, but after that there's a section in the [account](http://exercism.io/account) where existing track mentors can invite new ones.
 
-Some icons are the official language logo (tweaked). Where a language doesn't seem to have an official logo, or where the official logo has copyright issues, we just make something up.
+The most successful tracks are where **each submission receives feedback quickly**, preferably within the first 24 hours.
 
-**exercism.io**
+In addition, the most interesting and useful conversations start when reviewers do not direct users to do specific things, but rather ask questions challenging people to think about different aspects of their solution, or explore aspects of the language.
 
-The logo should be named `{{TRACK_ID}}.png` and live in `/public/img/tracks/` in the exercism/exercism.io repository.
-https://github.com/exercism/exercism.io/tree/master/public/img/tracks
+Referencing existing blog posts and style guides seems to work well when making specific recommendations.
 
-Attribution goes in https://github.com/exercism/exercism.io/blob/master/ATTRIBUTION.md
+## Prepare for Open Source Contributions
 
-**x{{TRACK_ID}}**
+Once the track is live and active, it will often get new contributions.
 
-The logo should be named `icon.png` and live under `img/` in this repository. If you know how, go ahead and make an SVG as well.
+- [ ] Read the maintainer documentation
+- [ ] "Watch" the x{{SLUG}} repository
+- [ ] Find a second maintainer
 
-Attribution goes in the README.md file.
+We've got a few years of experience maintaining language tracks on Exercism. Here's what we have learned:
 
-## Successful Launches
+- [Maintaining a Track](https://github.com/exercism/exercism.io/blob/master/docs/maintaining-a-track.md)
+- [Reviewing a Pull Request](https://github.com/exercism/exercism.io/blob/master/docs/reviewing-a-pull-request.md)
 
-Some tracks have been more successful than others, and I believe the key features of the successful tracks are:
+There's more stuff in the [contributing guide](https://github.com/exercism/x-common/blob/master/CONTRIBUTING.md), as well. We're working on turning that into better, more focused maintainer documentation.
 
-* Each submission receives feedback quickly, preferably within the first 24 hours.
-* The code reviews do not direct users to do specific things, but rather ask questions challenging people to think about different aspects of their solution, or explore aspects of the language. Referencing existing blog posts and style guides seems to work well, when making specific recommendations.
+## Launch!
 
-For more about contributing to language tracks on exercism, check out the Problem API Contributing guide: https://github.com/exercism/x-api/blob/master/CONTRIBUTING.md
+- [ ] Toggle `"active"` to `true` in `config.json`
+- [ ] Mention it in the next "Behind the Scenes" newsletter (@kytrinyx)
+
