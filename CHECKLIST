@@ -35,7 +35,7 @@ The topics can be an empty list, and the difficulty level is from 1 to 10, and c
 - [ ] Add {{LANGUAGE}} as a submodule in [trackler](https://github.com/exercism/trackler/tree/master/tracks)
 - [ ] Update x-api and deploy
 
-This means that it will show up on http://exercism.io/languages and http://exercism.io/languages/{{SLUG}}
+This means that it will show up on http://exercism.io/languages and http://exercism.io/languages/{{TRACK_ID}}
 
 ## Step 3: Make the Track Ready for Launch
 
@@ -80,7 +80,7 @@ If the icon we have based this on is not in the public domain, we need to provid
 
 ### Documentation
 
-The documentation is used in the http://exercism.io/languages/{{SLUG}} section to help people get started with the track.
+The documentation is used in the http://exercism.io/languages/{{TRACK_ID}} section to help people get started with the track.
 
 The files live in the `docs/` directory here in this repository, and gets served to the site via the x-api. It should contain at minimum:
 
@@ -112,7 +112,7 @@ Referencing existing blog posts and style guides seems to work well when making 
 Once the track is live and active, it will often get new contributions.
 
 - [ ] Read the maintainer documentation
-- [ ] "Watch" the x{{SLUG}} repository
+- [ ] "Watch" the x{{TRACK_ID}} repository
 - [ ] Find a second maintainer
 
 We've got a few years of experience maintaining language tracks on Exercism. Here's what we have learned:
