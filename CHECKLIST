@@ -33,7 +33,7 @@ The topics can be an empty list, and the difficulty level is from 1 to 10, and c
 ## Step 2: Add the Track to Exercism (@kytrinyx)
 
 - [ ] Add {{LANGUAGE}} as a submodule in [trackler](https://github.com/exercism/trackler/tree/master/tracks)
-- [ ] Update x-api and deploy
+- [ ] Bump trackler version x-api and exercism.io and deploy
 
 This means that it will show up on http://exercism.io/languages and http://exercism.io/languages/{{TRACK_ID}}
 
