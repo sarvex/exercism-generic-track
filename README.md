@@ -28,7 +28,7 @@ yet have a repository for, open a [new issue][new-issue] in this repository.
   `TRACK_ID=<id>; git submodule add https://github.com/exercism/x$TRACK_ID tracks/$TRACK_ID`
 - [ ] Create [new team][new-team] for language
 - [ ] Add bootstrapped repository to team **with write access**
-- [ ] Invite requestor to team
+- [ ] Invite maintainer to team
 
 [travis]: https://travis-ci.org/profile/exercism
 [appveyor]: https://ci.appveyor.com/projects/new
@@ -39,9 +39,14 @@ yet have a repository for, open a [new issue][new-issue] in this repository.
 
 ### Bootstrap a Track
 
-Add the checklist as a reply to the issue request, then follow the checklist. When it is complete,
-let the requestor know that the repo is ready for them, and where to find the launch checklist
-for the track.
+1. Add the "new track" label.
+1. Confirm maintainer
+  - If the requestor is volunteering, that's fine.
+  - If the requestor is volunteering someone else for the job, confirm with that person.
+  - If there is no maintainer, label with "needs maintainer"
+1. Once a maintainer is confirmed, add the "new track" checklist as a reply.
+1. Once the checklist is complete, let the requestor/maintainer know that the repo is ready for them,
+  and point them to the launch checklist issue.
 
 [saved-replies]: https://github.com/blog/2135-saved-replies
 [request-new-language-track]: https://github.com/exercism/request-new-language-track
