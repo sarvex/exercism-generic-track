@@ -1,0 +1,73 @@
+#!/usr/bin/env ruby
+
+track_id = ENV['TRACK_ID']
+language = ENV['LANGUAGE']
+
+if !(track_id && language)
+  STDERR.puts "Usage: TRACK_ID=<id> LANGUAGE=<language> bin/bootstrap"
+  exit 1
+end
+
+tracks_dir = File.expand_path("../../../tracks", __FILE__)
+dir = File.join(tracks_dir, "x%s" % track_id)
+
+if File.exist?(dir)
+  STDERR.puts("FATAL: x%s already exists" % track_id)
+end
+
+require 'date'
+require 'fileutils'
+
+template = File.expand_path("../../../request-new-language-track", __FILE__)
+
+system("cp -r %s %s" % [template, dir])
+system("rm -rf %s" % File.join(dir, ".git"))
+system("rm -rf %s" % File.join(dir, "bin/bootstrap"))
+system("mv %s/TRACK_README.md %s/README.md" % [dir, dir])
+
+f = File.join(dir, 'LICENSE')
+contents = File.read(f)
+File.open(f, "w") do |f|
+  f.write contents.gsub(/\d{4}/, Date.today.year.to_s)
+end
+
+[
+  "config.json",
+  "README.md",
+  "CHECKLIST",
+  "CONSISTENCY",
+  "TRAVIS",
+].each do |name|
+  f = File.join(dir, name)
+  contents = File.read(f)
+  File.open(f, "w") do |f|
+    f.write contents.gsub("{{TRACK_ID}}", track_id).gsub("{{LANGUAGE}}", language)
+  end
+end
+
+Dir.chdir dir
+
+system("git init")
+
+gitinfo = File.join(dir, ".git", "info")
+FileUtils.mkdir_p(gitinfo)
+[
+  "CHECKLIST",
+  "CONSISTENCY",
+  "TRAVIS",
+].each do |file|
+  system("echo %s >> %s" % [file, File.join(gitinfo, "exclude")])
+end
+
+system("git add .")
+system("git commit -m 'Bootstrap %s track'" % language)
+system("hub create exercism/x%s" % track_id)
+system("git push origin master")
+
+[
+  "CHECKLIST",
+  "CONSISTENCY",
+  "TRAVIS",
+].each do |file|
+  system("hub issue create -f %s" % file)
+end
