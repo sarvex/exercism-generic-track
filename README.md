@@ -39,7 +39,9 @@ yet have a repository for, open a [new issue][new-issue] in this repository.
 
 ### Bootstrap a Track
 
-Add the checklist as a reply to the issue request, then follow the checklist.
+Add the checklist as a reply to the issue request, then follow the checklist. When it is complete,
+let the requestor know that the repo is ready for them, and where to find the launch checklist
+for the track.
 
 [saved-replies]: https://github.com/blog/2135-saved-replies
 [request-new-language-track]: https://github.com/exercism/request-new-language-track
