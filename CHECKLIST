@@ -1,11 +1,5 @@
 Launch Checklist
 
-## Step 0: Prep the Repo (@kytrinyx)
-
-- [x] Create the repository
-- [x] Create starter issues
-- [ ] Turn on Travis CI for the track
-
 ## Step 1: Implement Exercises
 
 - [ ] Implement at least 10 problems
@@ -30,20 +24,12 @@ The topics can be an empty list, and the difficulty level is from 1 to 10, and c
 ]
 ```
 
-## Step 2: Add the Track to Exercism (@kytrinyx)
-
-- [ ] Add {{LANGUAGE}} as a submodule in [trackler](https://github.com/exercism/trackler/tree/master/tracks)
-- [ ] Bump trackler version x-api and exercism.io and deploy
-
-This means that it will show up on http://exercism.io/languages and http://exercism.io/languages/{{TRACK_ID}}
-
-## Step 3: Make the Track Ready for Launch
+## Step 2: Prepare the Track for Launch
 
 - [ ] Define `test_pattern` in `config.json`
 - [ ] Add a language icon or logo + attribution
 - [ ] Write documentation
 - [ ] Find track mentors
-- [ ] Add track mentors on the site (@kytrinyx)
 
 ### test_pattern
 
@@ -122,8 +108,10 @@ We've got a few years of experience maintaining language tracks on Exercism. Her
 
 There's more stuff in the [contributing guide](https://github.com/exercism/x-common/blob/master/CONTRIBUTING.md), as well. We're working on turning that into better, more focused maintainer documentation.
 
-## Launch!
+## Step 3: Launch!
 
 - [ ] Toggle `"active"` to `true` in `config.json`
 - [ ] Mention it in the next "Behind the Scenes" newsletter (@kytrinyx)
+- [ ] Add track mentors on the site (@kytrinyx)
+- [ ] Add track mainatiners to @exercism/track-maintainers team (any organization owner)
 
