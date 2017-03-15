@@ -37,7 +37,7 @@ Please keep the following in mind:
 
 - Each exercise should have a test suite, an example solution, a template file for the real implementation and ... (anything else that needs to go with each exercise for this track). The CI build expects files to be named using the following convention. The example solution should be named `{{LANGUAGE specific naming convention e.g. ExerciseModuleName.example}}`. The template file should be named `{{e.g. ExerciseModuleName.LANGUAGE}}`. Test file should be named `{{e.g. ExerciseModuleNameTest.LANGUAGE}}`. (Use the naming conventions of the track's language.)
 
-  - Make sure everything is good to go by running all tests with ... (explain how to run the full build locally, commonly `bin/build.sh`).
+- Make sure everything is good to go by running all tests with ... (explain how to run the full build locally, commonly `bin/build.sh`).
 
 - Please do not commit any configuration files or directories inside the exercise other than ...
 
@@ -47,6 +47,6 @@ Please keep the following in mind:
 # include the body of an example test
 ```
 
- - All the tests for {{LANGUAGE}} exercises can be run from the top level of the repo with ... Please run this command before submitting your PR.
+- All the tests for {{LANGUAGE}} exercises can be run from the top level of the repo with ... Please run this command before submitting your PR.
 
- - If you are submitting a new exercise, be sure to add it to the appropriate place in the `config.json` file. Also, please run `bin/fetch-configlet && bin/configlet` to ensure the exercise is configured correctly.
+- If you are submitting a new exercise, be sure to add it to the appropriate place in the `config.json` file. Also, please run `bin/fetch-configlet && bin/configlet` to ensure the exercise is configured correctly.
