@@ -37,9 +37,9 @@ Please keep the following in mind:
 - Please do not add a README or README.md file to the exercise directory. The READMEs are constructed using shared metadata, which lives in the
 [exercism/x-common](https://github.com/exercism/x-common) repository. Further explanation can be found in [fixing-exercise-readmes](https://github.com/exercism/exercism.io/blob/master/docs/fixing-exercise-readmes.md)
 
-- Each exercise should have a test suite, an example solution, a template file for the real implementation and ... (anything else that needs to go with each exercise for this track). The CI build expects files to be named using the following convention. The example solution should be named `ExerciseModuleName.example`. The template file should be named `ExerciseModuleName.{{LANGUAGE}}`. Test file should be named `ExerciseModuleNameTest.{{LANGUAGE}}`. (Use the naming conventions of the track's language.)
+- Each exercise should have a test suite, an example solution, a template file for the real implementation and ... (anything else that needs to go with each exercise for this track). The CI build expects files to be named using the following convention: (describe the {{LANGUAGE}} convention for naming the various files that make up an exercise).
 
-  - Make sure everything is good to go by running all tests with ... (explain how to run the full build locally, commonly `bin/build.sh`).
+- Make sure everything is good to go by running all tests with ... (explain how to run the full build locally, commonly `bin/build.sh`).
 
 - Please do not commit any configuration files or directories inside the exercise other than ...
 
@@ -49,6 +49,6 @@ Please keep the following in mind:
 # include the body of an example test
 ```
 
- - All the tests for {{LANGUAGE}} exercises can be run from the top level of the repo with ... Please run this command before submitting your PR.
+- All the tests for {{LANGUAGE}} exercises can be run from the top level of the repo with ... Please run this command before submitting your PR.
 
- - If you are submitting a new exercise, be sure to add it to the appropriate place in the `config.json` file. Also, please run `bin/fetch-configlet && bin/configlet` to ensure the exercise is configured correctly.
+- If you are submitting a new exercise, be sure to add it to the appropriate place in the `config.json` file. Also, please run `bin/fetch-configlet && bin/configlet` to ensure the exercise is configured correctly.
