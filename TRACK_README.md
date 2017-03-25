@@ -18,6 +18,25 @@ We welcome pull requests of all kinds. No contribution is too small.
 
 We encourage contributions that provide fixes and improvements to existing exercises. Please note that this track's exercises must conform to the standards determined in the [exercism/x-common](https://github.com/exercism/x-common) repo. Changes to the tests or documentation of a common exercise will often warrant a PR in that repo before it can be incorporated into this track's exercises. If you're unsure, then go ahead and open a GitHub issue, and we'll discuss the change.
 
+## Exercise Tests ##
+
+At the most basic level, Exercism is all about the tests. They drive the user's implementation forward and tell them when the exercise is complete.
+
+The utmost care and attention should be used when adding or making changes to the tests for an exercise. When implementing an exercise test suite, we want to provide a good user experience for the people writing a solution to the exercise. People should not be confused or overwhelmed.
+
+We simulate Test-Driven Development (TDD) by implementing the tests in order of increasing complexity. We try to ensure that each test either
+
+- helps triangulate a solution to be more generic, or
+- requires new functionality incrementally.
+
+Test files should use the following format:
+
+```
+# include the body of an example test
+```
+
+## Submitting a Pull Request ##
+
 Please keep the following in mind:
 
 - Pull requests should be focused on a single exercise, issue, or change.
@@ -30,6 +49,14 @@ Please keep the following in mind:
 
 - Watch out for trailing spaces, extra blank lines, and spaces in blank lines.
 
+- All the tests for {{LANGUAGE}} exercises can be run from the top level of the repo with ... Please run this command before submitting your PR.
+
+## Contributing a New Exercise ##
+
+- All Exercism exercises must be defined in [x-common](https://github.com/exercism/x-common/tree/master/exercises) before they are implemented for a specific track. Please submit a PR there if your exercise is new to Exercism.
+
+- Please make sure the new exercise conforms to specifications in the [exercism/x-common](https://github.com/exercism/x-common) repo.
+
 - Each exercise must stand on its own. Do not reference files outside the exercise directory. They will not be included when the user fetches the exercise.
 
 - Exercises should use only the {{LANGUAGE}} core libraries.
@@ -39,16 +66,7 @@ Please keep the following in mind:
 
 - Each exercise should have a test suite, an example solution, a template file for the real implementation and ... (anything else that needs to go with each exercise for this track). The CI build expects files to be named using the following convention: (describe the {{LANGUAGE}} convention for naming the various files that make up an exercise).
 
-- Make sure everything is good to go by running all tests with ... (explain how to run the full build locally, commonly `bin/build.sh`).
-
 - Please do not commit any configuration files or directories inside the exercise other than ...
 
-- Test files should use the following format:
+- Be sure to add it to the appropriate place in the `config.json` file. Also, please run `bin/fetch-configlet && bin/configlet` to ensure the exercise is configured correctly.
 
-```
-# include the body of an example test
-```
-
-- All the tests for {{LANGUAGE}} exercises can be run from the top level of the repo with ... Please run this command before submitting your PR.
-
-- If you are submitting a new exercise, be sure to add it to the appropriate place in the `config.json` file. Also, please run `bin/fetch-configlet && bin/configlet` to ensure the exercise is configured correctly.
