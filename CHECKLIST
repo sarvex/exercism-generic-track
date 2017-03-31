@@ -24,6 +24,8 @@ The topics can be an empty list, and the difficulty level is from 1 to 10, and c
 ]
 ```
 
+Problems are delivered to users in the same order that they are listed in this "exercises" array. Try to order them by increasing difficulty, but don't worry too much—it can always be adjusted later.
+
 ## Step 2: Prepare the Track for Launch
 
 - [ ] Define `test_pattern` in `config.json`
