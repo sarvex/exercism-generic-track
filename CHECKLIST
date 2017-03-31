@@ -26,9 +26,11 @@ The topics can be an empty list, and the difficulty level is from 1 to 10, and c
 
 ## Step 2: Prepare the Track for Launch
 
+All of these steps are described in detail below.
+
 - [ ] Define `test_pattern` in `config.json`
 - [ ] Add a language icon or logo + attribution
-- [ ] Write documentation
+- [ ] Write documentation in `docs/`
 - [ ] Find track mentors
 
 ### test_pattern
