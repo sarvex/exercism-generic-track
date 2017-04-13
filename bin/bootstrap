@@ -24,6 +24,7 @@ system("cp -r %s %s" % [template, dir])
 system("rm -rf %s" % File.join(dir, ".git"))
 system("rm -rf %s" % File.join(dir, "bin/bootstrap"))
 system("mv %s/TRACK_README.md %s/README.md" % [dir, dir])
+system("mv %s/TRACK_PULL_REQUEST_TEMPLATE.md %s/PULL_REQUEST_TEMPLATE.md" % [dir, dir])
 
 f = File.join(dir, 'LICENSE')
 contents = File.read(f)
