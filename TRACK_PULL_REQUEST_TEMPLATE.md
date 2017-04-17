@@ -10,9 +10,9 @@ When we review your submission we will check the following:
 - [ ] Exemplifies the idioms of {{LANGUAGE}}
 - [ ] Absence of non-standard libraries
 - [ ] No extraneous configuration files
-- [ ] Free of development artifacts such as `puts`, `console.log`, or `debugger` calls
+- [ ] Free of development/debug artifacts such as `puts`, `console.log`, or `debugger` calls
 
-If you are submitting a new exercise, we will compare your submission to the common guidelines set out for the exercise in [x-common](https://github.com/exercism/x-common/tree/master/exercises). 
+If you are submitting a new exercise, we will compare your submission to the common guidelines set out for the exercise in [x-common](https://github.com/exercism/x-common/tree/master/exercises).
 
 Your submission will be run through a series of automated tests and checks. The outcome will be displayed below. In addition to the test suite, the following issues are automatically checked:
 
