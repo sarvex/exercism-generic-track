@@ -70,18 +70,7 @@ If the icon we have based this on is not in the public domain, we need to provid
 
 ### Documentation
 
-The documentation is used in the http://exercism.io/languages/{{TRACK_ID}} section to help people get started with the track.
-
-The files live in the `docs/` directory here in this repository, and gets served to the site via the x-api. It should contain at minimum:
-
-- `INSTALLATION.md` - about how to get the language set up locally.
-- `TESTS.md` - about how to run the tests for the exercises.
-
-Some nice to haves:
-
-- `ABOUT.md` - a short, friendly blurb about the language. What types of problems does it solve really well? What is it typically used for?
-- `LEARNING.md` - a few notes about where people might want to go to learn the language from scratch.
-- `RESOURCES.md` - references and other useful resources.
+For details about the various files and what they should contain, check out [writing language track documentation](https://github.com/exercism/docs/blob/master/maintaining-a-track/writing-documentation.md) in the [docs repository](https://github.com/exercism/docs).
 
 ### Find Track Mentors
 
