@@ -12,7 +12,7 @@ The simplest way to install {{LANGUAGE}} is ...
 
 Thank you so much for contributing! :tada:
 
-Please start by reading how to [get involved in a track](https://github.com/exercism/exercism.io/blob/master/docs/getting-involved-in-a-track.md). Comprehensive details on contributing can be found [here](https://github.com/exercism/x-common/blob/master/CONTRIBUTING.md). Be sure to read the Exercism [Code of Conduct](https://github.com/exercism/exercism.io/blob/master/CODE_OF_CONDUCT.md).
+Please read about how to [get involved in a track](https://github.com/exercism/docs/tree/master/contributing-to-language-tracks). Be sure to read the Exercism [Code of Conduct](https://github.com/exercism/exercism.io/blob/master/CODE_OF_CONDUCT.md).
 
 We welcome pull requests of all kinds. No contribution is too small.
 
