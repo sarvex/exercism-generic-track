@@ -37,7 +37,7 @@ end
   "config.json",
   "README.md",
   "CHECKLIST.md",
-  "CONSISTENCY",
+  "CONSISTENCY.md",
   "TRAVIS",
 ].each do |name|
   f = File.join(dir, name)
@@ -55,7 +55,7 @@ gitinfo = File.join(dir, ".git", "info")
 FileUtils.mkdir_p(gitinfo)
 [
   "CHECKLIST.md",
-  "CONSISTENCY",
+  "CONSISTENCY.md",
   "TRAVIS",
 ].each do |file|
   system("echo %s >> %s" % [file, File.join(gitinfo, "exclude")])
@@ -68,7 +68,7 @@ system("git push origin master")
 
 [
   "CHECKLIST.md",
-  "CONSISTENCY",
+  "CONSISTENCY.md",
   "TRAVIS",
 ].each do |file|
   system("hub issue create -f %s" % file)
