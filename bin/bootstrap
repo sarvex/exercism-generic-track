@@ -36,9 +36,9 @@ end
 [
   "config.json",
   "README.md",
-  "CHECKLIST",
-  "CONSISTENCY",
-  "TRAVIS",
+  "CHECKLIST.md",
+  "CONSISTENCY.md",
+  "TRAVIS.md",
 ].each do |name|
   f = File.join(dir, name)
   contents = File.read(f)
@@ -54,9 +54,9 @@ system("git init")
 gitinfo = File.join(dir, ".git", "info")
 FileUtils.mkdir_p(gitinfo)
 [
-  "CHECKLIST",
-  "CONSISTENCY",
-  "TRAVIS",
+  "CHECKLIST.md",
+  "CONSISTENCY.md",
+  "TRAVIS.md",
 ].each do |file|
   system("echo %s >> %s" % [file, File.join(gitinfo, "exclude")])
 end
@@ -67,9 +67,9 @@ system("hub create exercism/x%s" % track_id)
 system("git push origin master")
 
 [
-  "CHECKLIST",
-  "CONSISTENCY",
-  "TRAVIS",
+  "CHECKLIST.md",
+  "CONSISTENCY.md",
+  "TRAVIS.md",
 ].each do |file|
   system("hub issue create -f %s" % file)
 end
