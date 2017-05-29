@@ -36,7 +36,7 @@ end
 [
   "config.json",
   "README.md",
-  "CHECKLIST",
+  "CHECKLIST.md",
   "CONSISTENCY",
   "TRAVIS",
 ].each do |name|
@@ -54,7 +54,7 @@ system("git init")
 gitinfo = File.join(dir, ".git", "info")
 FileUtils.mkdir_p(gitinfo)
 [
-  "CHECKLIST",
+  "CHECKLIST.md",
   "CONSISTENCY",
   "TRAVIS",
 ].each do |file|
@@ -67,7 +67,7 @@ system("hub create exercism/x%s" % track_id)
 system("git push origin master")
 
 [
-  "CHECKLIST",
+  "CHECKLIST.md",
   "CONSISTENCY",
   "TRAVIS",
 ].each do |file|
