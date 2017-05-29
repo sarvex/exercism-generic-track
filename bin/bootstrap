@@ -38,7 +38,7 @@ end
   "README.md",
   "CHECKLIST.md",
   "CONSISTENCY.md",
-  "TRAVIS",
+  "TRAVIS.md",
 ].each do |name|
   f = File.join(dir, name)
   contents = File.read(f)
@@ -56,7 +56,7 @@ FileUtils.mkdir_p(gitinfo)
 [
   "CHECKLIST.md",
   "CONSISTENCY.md",
-  "TRAVIS",
+  "TRAVIS.md",
 ].each do |file|
   system("echo %s >> %s" % [file, File.join(gitinfo, "exclude")])
 end
@@ -69,7 +69,7 @@ system("git push origin master")
 [
   "CHECKLIST.md",
   "CONSISTENCY.md",
-  "TRAVIS",
+  "TRAVIS.md",
 ].each do |file|
   system("hub issue create -f %s" % file)
 end
