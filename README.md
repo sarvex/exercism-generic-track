@@ -19,7 +19,7 @@ Do a search in this repository for the name of the language. Remember to check b
 ## How to improve the process for the next new maintainer
 
 It's crucial that we improve the documentation and instructions for launching a track. The best people to discover
-issues with our current process is new maintainers, launching a track for the first time. Unfortunately,
+issues with our current process are new maintainers, launching a track for the first time. Unfortunately,
 that's the worst possible time for them to fix the documentation, because they've got the least amount of
 knowledge about how Exercism is put together.
 
