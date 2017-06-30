@@ -35,7 +35,7 @@ In some cases, we might discover that we're missing high-level documentation tha
 repo, in which case we should open an issue or pull request there, proposing the new documentation. Tag the new
 maintainer there, as well, to get their input on the new docs.
 
-[checklist]: https://github.com/exercism/request-new-language-track/blob/master/CHECKLIST
+[checklist]: https://github.com/exercism/request-new-language-track/blob/master/CHECKLIST.md
 [docs]: https://github.com/exercism/docs
 [issue-templates]: https://github.com/exercism/request-new-language-track/blob/master/bin/bootstrap#L67-L73
 
