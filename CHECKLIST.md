@@ -107,5 +107,5 @@ There's more stuff in the [contributing guide](https://github.com/exercism/probl
 - [ ] Toggle `"active"` to `true` in `config.json`
 - [ ] Mention it in the next "Behind the Scenes" newsletter (@kytrinyx)
 - [ ] Add track mentors on the site (@kytrinyx)
-- [ ] Add track maintainers to @exercism/track-maintainers team (any organization owner)
+- [ ] Add track maintainers to exercism/track-maintainers team (any organization owner)
 
