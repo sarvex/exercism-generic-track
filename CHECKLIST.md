@@ -91,7 +91,7 @@ Referencing existing blog posts and style guides seems to work well when making 
 Once the track is live and active, it will often get new contributions.
 
 - [ ] Read the maintainer documentation
-- [ ] "Watch" the x{{TRACK_ID}} repository
+- [ ] "Watch" the {{TRACK_ID}} repository
 - [ ] Find a second maintainer
 - [ ] Update the .github/PULL_REQUEST_TEMPLATE.md file
 
