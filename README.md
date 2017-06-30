@@ -59,7 +59,7 @@ maintainer there, as well, to get their input on the new docs.
 - [ ] If Mac-specific language, turn on [Circle CI][circle]
   Add it as a Linux project, then switch it to OS X in _Project Settings -> Build Environment_
 - [ ] Add as a submodule to [trackler][]
-  `TRACK_ID=<id>; git submodule add https://github.com/exercism/x$TRACK_ID tracks/$TRACK_ID`
+  `TRACK_ID=<id>; git submodule add https://github.com/exercism/$TRACK_ID tracks/$TRACK_ID`
 - [ ] Create [new team][new-team] for language
 - [ ] Add bootstrapped repository to team **with write access**
 - [ ] Invite maintainer to team

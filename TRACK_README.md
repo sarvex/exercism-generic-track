@@ -1,6 +1,6 @@
 # Exercism {{LANGUAGE}} Track
 
-![build status](https://travis-ci.org/exercism/xslug.svg?branch=master)
+![build status](https://travis-ci.org/exercism/{{SLUG}}.svg?branch=master)
 
 Exercism exercises in {{LANGUAGE}}.
 

@@ -9,10 +9,10 @@ if !(track_id && language)
 end
 
 tracks_dir = File.expand_path("../../../tracks", __FILE__)
-dir = File.join(tracks_dir, "x%s" % track_id)
+dir = File.join(tracks_dir, track_id)
 
 if File.exist?(dir)
-  STDERR.puts("FATAL: x%s already exists" % track_id)
+  STDERR.puts("FATAL: %s already exists" % track_id)
 end
 
 require 'date'
@@ -63,7 +63,7 @@ end
 
 system("git add .")
 system("git commit -m 'Bootstrap %s track'" % language)
-system("hub create exercism/x%s" % track_id)
+system("hub create exercism/%s" % track_id)
 system("git push origin master")
 
 [
