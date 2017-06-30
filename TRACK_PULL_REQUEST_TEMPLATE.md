@@ -12,7 +12,7 @@ When we review your submission we will check the following:
 - [ ] No extraneous configuration files
 - [ ] Free of development/debug artifacts such as `puts`, `console.log`, or `debugger` calls
 
-If you are submitting a new exercise, we will compare your submission to the common guidelines set out for the exercise in [x-common](https://github.com/exercism/x-common/tree/master/exercises).
+If you are submitting a new exercise, we will compare your submission to the common guidelines set out for the exercise in [exercism/problem-specifications](https://github.com/exercism/problem-specifications/tree/master/exercises).
 
 Your submission will be run through a series of automated tests and checks. The outcome will be displayed below. In addition to the test suite, the following issues are automatically checked:
 

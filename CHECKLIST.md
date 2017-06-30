@@ -4,7 +4,7 @@ Launch Checklist
 
 - [ ] Implement at least 10 problems
 
-See the [contributing guide](https://github.com/exercism/x-common/blob/master/CONTRIBUTING.md#porting-an-exercise-to-another-language-track) for the details about the format of an exercise.
+See the [contributing guide](https://github.com/exercism/docs/blob/master/contributing-to-language-tracks/porting-an-exercise.md) for the details about the format of an exercise.
 
 The short version is:
 
@@ -99,7 +99,7 @@ We've got a few years of experience maintaining language tracks on Exercism. Her
 - [Maintaining a Track](https://github.com/exercism/exercism.io/blob/master/docs/maintaining-a-track.md)
 - [Reviewing a Pull Request](https://github.com/exercism/exercism.io/blob/master/docs/reviewing-a-pull-request.md)
 
-There's more stuff in the [contributing guide](https://github.com/exercism/x-common/blob/master/CONTRIBUTING.md), as well. We're working on turning that into better, more focused maintainer documentation.
+There's more stuff in the [contributing guide](https://github.com/exercism/problem-specifications/blob/master/CONTRIBUTING.md), as well. We're working on turning that into better, more focused maintainer documentation.
 
 ## Step 3: Launch!
 
