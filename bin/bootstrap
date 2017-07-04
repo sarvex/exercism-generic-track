@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+require 'octokit'
+
 track_id = ENV['TRACK_ID']
 language = ENV['LANGUAGE']
 
@@ -73,3 +75,14 @@ system("git push origin master")
 ].each do |file|
   system("hub issue create -f %s" % file)
 end
+
+client = Octokit::Client.new(access_token: ENV['ADMIN_ORG_TOKEN'])
+team_options = {
+  :name => track_id,
+  :description => "Maintainers of the Exercism %s track" % language,
+  :privacy => 'closed'
+}
+team = client.create_team(org, team_options)
+client.add_team_repository(team.id, 'exercism/%s' % track_id, permission: 'push')
+
+# NOTE: must manually set team parent for team, since the API doesn't handle it yet
