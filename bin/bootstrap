@@ -86,7 +86,20 @@ repo_options = {
   :has_wiki => false,
 }
 repo = client.edit_repository("exercism/%s" % track_id)
-# NOTE: must manually set repo topics, since the API doesn't handle them yet
+
+# NOTE: have to use a separate (undocumented) endpoint to set the topics.
+# The endpoint takes an array, which means we can't use octokit. WTF GitHub?!?
+auth =  "Authorization: token %s" % ENV['ADMIN_ORG_TOKEN']
+accept = "Accept: application/vnd.github.mercy-preview+json"
+content = "Content-Type: application/json"
+url = "https://api.github.com/repos/exercism/track_id/topics" % track_id
+cmd = 'curl -XPUT -H "%s" -H "%s" -H "%s" -d "[\"exercism-track\", \"exercism-exercises\"]" "%s"' % [
+  auth,
+  accept,
+  content,
+  url,
+]
+system(cmd)
 
 team_options = {
   :name => track_id,
