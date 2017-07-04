@@ -77,6 +77,17 @@ system("git push origin master")
 end
 
 client = Octokit::Client.new(access_token: ENV['ADMIN_ORG_TOKEN'])
+
+repo_options = {
+  :name => track_id,
+  :description => "Exercism exercises in %s" % language,
+  :homepage => "http://exercism.io/languages/%s" % track_id,
+  :has_projects => false,
+  :has_wiki => false,
+}
+repo = client.edit_repository("exercism/%s" % track_id)
+# NOTE: must manually set repo topics, since the API doesn't handle them yet
+
 team_options = {
   :name => track_id,
   :description => "Maintainers of the Exercism %s track" % language,
