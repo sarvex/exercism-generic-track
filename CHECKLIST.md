@@ -93,7 +93,7 @@ Once the track is live and active, it will often get new contributions.
 - [ ] Read the maintainer documentation
 - [ ] "Watch" the {{TRACK_ID}} repository
 - [ ] Find a second maintainer
-- [ ] Update the .github/PULL_REQUEST_TEMPLATE.md file
+- [ ] Create a .github/PULL_REQUEST_TEMPLATE.md file, if necessary [see details](https://help.github.com/articles/creating-a-pull-request-template-for-your-repository/)
 
 We've got a few years of experience maintaining language tracks on Exercism. Here's what we have learned:
 
