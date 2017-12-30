@@ -15,4 +15,10 @@
 
 **Is there a testing framework available for the language?**
 
+**Is this language listed as 'supported' by [Prism.js]([http://prismjs.com/#languages-list)?** If so
+- what is Prism's canonical spelling for the language?
+- what file extensions should be highlighted?
+
+**If it is not supported by Prism.js, what is the closest supported language it maps to?**
+
 **Who will be leading the effort to launch the track?**
