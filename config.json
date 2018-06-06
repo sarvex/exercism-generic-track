@@ -2,16 +2,10 @@
   "track_id": "{{TRACK_ID}}",
   "language": "{{LANGUAGE}}",
   "active": false,
-  "test_pattern": "[Tt]est",
-  "solution_pattern": "[Ee]xample",
   "ignore_pattern": "[Ee]xample",
-  "exercises": [
-
-  ],
-  "deprecated": [
-
-  ],
-  "foregone": [
-
-  ]
+  "solution_pattern": "[Ee]xample",
+  "test_pattern": "[Tt]est",
+  "foregone": [],
+  "exercises": null,
+  "deprecated": []
 }
