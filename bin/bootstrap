@@ -73,7 +73,7 @@ system("git push origin master")
   "CONSISTENCY.md",
   "TRAVIS.md",
 ].each do |file|
-  system("hub issue create -f %s" % file)
+  system("hub issue create -F %s" % file)
 end
 
 client = Octokit::Client.new(access_token: ENV['ADMIN_ORG_TOKEN'])
@@ -87,26 +87,13 @@ repo_options = {
 }
 repo = client.edit_repository("exercism/%s" % track_id)
 
-# NOTE: have to use a separate (undocumented) endpoint to set the topics.
-# The endpoint takes an array, which means we can't use octokit. WTF GitHub?!?
-auth =  "Authorization: token %s" % ENV['ADMIN_ORG_TOKEN']
-accept = "Accept: application/vnd.github.mercy-preview+json"
-content = "Content-Type: application/json"
-url = "https://api.github.com/repos/exercism/track_id/topics" % track_id
-cmd = 'curl -XPUT -H "%s" -H "%s" -H "%s" -d "[\"exercism-track\", \"exercism-exercises\"]" "%s"' % [
-  auth,
-  accept,
-  content,
-  url,
-]
-system(cmd)
+client.put('/repos/exercism/%s/topics' % track_id, {names: ["exercism-track", "exercism-exercises"], accept: 'application/vnd.github.mercy-preview+json'})
 
 team_options = {
   :name => track_id,
   :description => "Maintainers of the Exercism %s track" % language,
-  :privacy => 'closed'
+  :privacy => 'closed',
+  :parent_team_id => 1399433,
 }
-team = client.create_team(org, team_options)
+team = client.create_team('exercism', team_options.merge(accept: 'application/vnd.github.hellcat-preview+json'))
 client.add_team_repository(team.id, 'exercism/%s' % track_id, permission: 'push')
-
-# NOTE: must manually set team parent for team, since the API doesn't handle it yet
