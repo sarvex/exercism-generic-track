@@ -56,7 +56,6 @@ gitinfo = File.join(dir, ".git", "info")
 FileUtils.mkdir_p(gitinfo)
 [
   "CHECKLIST.md",
-  "CONSISTENCY.md",
   "TRAVIS.md",
 ].each do |file|
   system("echo %s >> %s" % [file, File.join(gitinfo, "exclude")])
@@ -69,7 +68,6 @@ system("git push origin master")
 
 [
   "CHECKLIST.md",
-  "CONSISTENCY.md",
   "TRAVIS.md",
 ].each do |file|
   system("hub issue create -F %s" % file)
@@ -80,7 +78,7 @@ client = Octokit::Client.new(access_token: ENV['ADMIN_ORG_TOKEN'])
 repo_options = {
   :name => track_id,
   :description => "Exercism exercises in %s" % language,
-  :homepage => "http://exercism.io/languages/%s" % track_id,
+  :homepage => "http://exercism.io/tracks/%s" % track_id,
   :has_projects => false,
   :has_wiki => false,
 }
