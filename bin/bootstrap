@@ -1,6 +1,8 @@
 #!/usr/bin/env ruby
 
 require 'octokit'
+require 'date'
+require 'fileutils'
 
 track_id = ENV['TRACK_ID']
 language = ENV['LANGUAGE']
@@ -10,20 +12,30 @@ if !(track_id && language)
   exit 1
 end
 
+unless system("hub --version")
+  STDERR.puts "You need to install github/hub. Try brew install hub."
+end
+
+unless ENV["ADMIN_ORG_TOKEN"]
+  STDERR.puts "You need an environment variable 'ADMIN_ORG_TOKEN' with a GitHub personal access token with the admin scope on it."
+end
+
 tracks_dir = File.expand_path("../../../tracks", __FILE__)
+FileUtils.mkdir_p(tracks_dir)
+
 dir = File.join(tracks_dir, track_id)
 
 if File.exist?(dir)
   STDERR.puts("FATAL: %s already exists" % track_id)
 end
 
-require 'date'
-require 'fileutils'
-
 template = File.expand_path("../../../request-new-language-track", __FILE__)
 
 system("cp -r %s %s" % [template, dir])
 system("rm -rf %s" % File.join(dir, ".git"))
+system("rm -rf %s" % File.join(dir, "Gemfile"))
+system("rm -rf %s" % File.join(dir, "Gemfile.lock"))
+system("rm -rf %s" % File.join(dir, ".ruby-version"))
 system("rm -rf %s" % File.join(dir, "bin/bootstrap"))
 system("rm -rf %s" % File.join(dir, ".github/ISSUE_TEMPLATE.md"))
 system("mv %s/TRACK_README.md %s/README.md" % [dir, dir])
@@ -38,7 +50,6 @@ end
   "config.json",
   "README.md",
   "CHECKLIST.md",
-  "TRAVIS.md",
   ".travis.yml",
 ].each do |name|
   f = File.join(dir, name)
@@ -54,24 +65,14 @@ system("git init")
 
 gitinfo = File.join(dir, ".git", "info")
 FileUtils.mkdir_p(gitinfo)
-[
-  "CHECKLIST.md",
-  "TRAVIS.md",
-].each do |file|
-  system("echo %s >> %s" % [file, File.join(gitinfo, "exclude")])
-end
+system("echo %s >> %s" % ["CHECKLIST.md", File.join(gitinfo, "exclude")])
 
 system("git add .")
 system("git commit -m 'Bootstrap %s track'" % language)
 system("hub create exercism/%s" % track_id)
 system("git push origin master")
 
-[
-  "CHECKLIST.md",
-  "TRAVIS.md",
-].each do |file|
-  system("hub issue create -F %s" % file)
-end
+system("hub issue create -F CHECKLIST.md")
 
 client = Octokit::Client.new(access_token: ENV['ADMIN_ORG_TOKEN'])
 
