@@ -85,7 +85,7 @@ repo_options = {
 }
 repo = client.edit_repository("exercism/%s" % track_id)
 
-client.put('/repos/exercism/%s/topics' % track_id, {names: ["exercism-track", "exercism-exercises"], accept: 'application/vnd.github.mercy-preview+json'})
+client.put('/repos/exercism/%s/topics' % track_id, {names: ["exercism-track"], accept: 'application/vnd.github.mercy-preview+json'})
 
 team_options = {
   :name => track_id,
