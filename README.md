@@ -1,20 +1,18 @@
 # Request a new Exercism language track
 
-## How to request support for a new language track
+## Does Exercism already support the language?
 
-**Does Exercism already support the language?**
+Please [search our repositories](https://github.com/exercism), to see both active and inactive tracks on the site.
 
-Check [this list][trackler-tracks], which contains both the active and inactive tracks on the site.
+If you find the language, check the he `config.json` file to see if it has an `active` key, which will be true or false. If you'd like to help out, please open an issue on that repository to say hello.
 
-If you find the language, follow the links from that list to view the repository. The `config.json` file
-has an `active` key, which will be true or false.
+## Has someone else asked for it?
 
-**Has someone else asked for it?**
+Do a search in the issues in this repository for the name of the language. Remember to check both open and closed issues.
 
-Do a search in this repository for the name of the language. Remember to check both open and closed issues.
+## It doesn't exist - I want to create it!
 
-[new-issue]: https://github.com/exercism/request-new-language-track/issues/new
-[trackler-tracks]: https://github.com/exercism/trackler/tree/master/tracks
+Awesome!! Please open a [new issue](https://github.com/exercism/request-new-language-track/issues/new), filling out the template. We'll take a look!
 
 ## How to improve the process for the next new maintainer
 
@@ -38,6 +36,10 @@ maintainer there, as well, to get their input on the new docs.
 [checklist]: https://github.com/exercism/request-new-language-track/blob/master/CHECKLIST.md
 [docs]: https://github.com/exercism/docs
 [issue-templates]: https://github.com/exercism/request-new-language-track/blob/master/bin/bootstrap#L67-L73
+
+---
+
+# Notes for Org Owners
 
 ## How to bootstrap a new track
 
