@@ -2,12 +2,12 @@
 
 {{ .Spec.Description -}}
 {{- with .Hints }}
-{{ . }}
+{{ . -}}
 {{ end }}
 {{- with .TrackInsert }}
-{{ . }}
+{{ . -}}
 {{ end }}
-{{- with .Spec.Credits -}}
+{{- with .Spec.Credits }}
 ## Source
 
 {{ . }}
