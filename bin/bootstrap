@@ -36,7 +36,9 @@ github.com:
 end
 
 unless ENV["ADMIN_ORG_TOKEN"]
-  STDERR.puts "\nYou need an environment variable 'ADMIN_ORG_TOKEN' with a GitHub personal access token with the admin scope on it."
+  STDERR.puts "\nOctokit needs a separate Personal Access Token than hub uses."
+  STDERR.puts "\n'Create a personal access token with the admin scope."
+  STDERR.puts "\n'Store it in your shell config in an environment variable named ADMIN_ORG_TOKEN."
   exit 1
 end
 
