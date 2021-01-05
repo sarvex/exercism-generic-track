@@ -1,5 +1,5 @@
 # Exercism {{LANGUAGE}} Track
 
-[![Build Status](https://travis-ci.org/exercism/{{TRACK_ID}}.svg?branch=master)](https://travis-ci.org/exercism/{{TRACK_ID}})
+[![configlet](https://github.com/exercism/{{TRACK_ID}}/workflows/configlet/badge.svg)](https://github.com/exercism/{{TRACK_ID}}/actions?query=workflow%3Aconfiglet)
 
 Exercism exercises in {{LANGUAGE}}.
