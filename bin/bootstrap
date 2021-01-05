@@ -1,6 +1,11 @@
 #!/usr/bin/env ruby
 
+begin
 require 'octokit'
+rescue LoadError => e
+  puts e
+  exit
+end
 require 'date'
 require 'fileutils'
 
@@ -8,16 +13,31 @@ track_id = ENV['TRACK_ID']
 language = ENV['LANGUAGE']
 
 if !(track_id && language)
-  STDERR.puts "Usage: TRACK_ID=<id> LANGUAGE=<language> bin/bootstrap"
+  STDERR.puts "\nUsage: TRACK_ID=<id> LANGUAGE=<language> bin/bootstrap"
   exit 1
 end
 
 unless system("hub --version")
-  STDERR.puts "You need to install github/hub. Try brew install hub."
+  STDERR.puts "\nYou need to install github/hub. Try brew install hub."
+  exit 1
+end
+unless File.exist?(File.expand_path("~/.config/hub"))
+  STDERR.puts "\nYou need to authenticate with hub, but because of 2FA it might be a pain. Instead..."
+  STDERR.puts "1. Create a personal access token on github.com (settings > developer tools > personal access tokens)"
+  STDERR.puts "2. Create a file at ~/.config/hub with the following in it:\n\n"
+  config = <<~CONFIG
+github.com:
+- user: YOUR_GITHUB_USERNAME
+  oauth_token: THE_PERSONAL_ACCESS_TOKEN
+  protocol: https
+  CONFIG
+  STDERR.puts config
+  exit 1
 end
 
 unless ENV["ADMIN_ORG_TOKEN"]
-  STDERR.puts "You need an environment variable 'ADMIN_ORG_TOKEN' with a GitHub personal access token with the admin scope on it."
+  STDERR.puts "\nYou need an environment variable 'ADMIN_ORG_TOKEN' with a GitHub personal access token with the admin scope on it."
+  exit 1
 end
 
 tracks_dir = File.expand_path("../../../tracks", __FILE__)
@@ -50,7 +70,6 @@ end
   "config.json",
   "README.md",
   "CHECKLIST.md",
-  ".travis.yml",
 ].each do |name|
   f = File.join(dir, name)
   contents = File.read(f)
@@ -69,10 +88,20 @@ system("echo %s >> %s" % ["CHECKLIST.md", File.join(gitinfo, "exclude")])
 
 system("git add .")
 system("git commit -m 'Bootstrap %s track'" % language)
-system("hub create exercism/%s" % track_id)
-system("git push origin master")
+puts
+puts
+if !system("hub create exercism/%s" % track_id)
+  STDERR.puts "Ok, this might be failing because of 2FA. Try creating a personal access token with 'repos' and 'workflows' enabled, and use that instead of your password to log in when hub asks for username/password."
+  exit 1
+end
 
-system("hub issue create -F CHECKLIST.md")
+if !system("git push origin master")
+  exit 1
+end
+
+if !system("hub issue create -F CHECKLIST.md")
+  exit 1
+end
 
 client = Octokit::Client.new(access_token: ENV['ADMIN_ORG_TOKEN'])
 
