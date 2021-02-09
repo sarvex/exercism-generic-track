@@ -90,6 +90,9 @@ system("echo %s >> %s" % ["CHECKLIST.md", File.join(gitinfo, "exclude")])
 
 system("git add .")
 system("git commit -m 'Bootstrap %s track'" % language)
+if system("git branch | grep master")
+  system("git branch -m master main")
+end
 puts
 puts
 if !system("hub create exercism/%s" % track_id)
