@@ -12,7 +12,15 @@
   "version": 3,
   "online_editor": {
     "indent_style": "space",
-    "indent_size": 4
+    "indent_size": 4,
+    "ace_editor_language": "",
+    "highlightjs_language": ""
+  },
+  "files": {
+    "solution": [],
+    "test": [],
+    "example": [],
+    "exemplar": []
   },
   "exercises": {
     "concept": [],
