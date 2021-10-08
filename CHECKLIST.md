@@ -1,13 +1,23 @@
 Launch tracking
 
-Edit this issue to keep track of the tasks you're working on towards launch.
+This issue helps keep track of the tasks you're working on towards launching this track.
 
-We have a rough guide for how to launch a track, which is sorely outdated but
-quite possibly better than nothing (I'm so sorry, I'm waaaay behind on getting
-documentation updated).
-https://github.com/exercism/legacy-docs/blob/main/language-tracks/launch/README.md
+The next steps are:
 
-Check out https://github.com/orgs/exercism/teams/track-maintainers/discussions/1
-for details about the #maintaining-\<track\> channels and private #maintainers channel in the exercism-team Slack workspace.
+- [ ] [Join our community](https://exercism.org/docs/building/tracks/new/join-our-community)
+- [ ] [Select programming language variant](https://exercism.org/docs/building/tracks/new/select-programming-language-variant) (if applicable)
+- [ ] [Select testing framework](https://exercism.org/docs/building/tracks/new/select-testing-framework)
+- [ ] [Add the first exercise](https://exercism.org/docs/building/tracks/new/add-first-exercise)
+- [ ] [Add initial exercises](https://exercism.org/docs/building/tracks/new/add-initial-exercises)
+- [ ] [Setup Continuous Integration](https://exercism.org/docs/building/tracks/new/setup-continuous-integration)
+- [ ] [Prepare for launch](https://exercism.org/docs/building/tracks/new/prepare-for-launch)
+- [ ] [Find Maintainers](https://exercism.org/docs/building/tracks/new/find-maintainers)
+- [ ] [Launch!](https://exercism.org/docs/building/tracks/new/launch)
+- [ ] [Implement tooling](https://exercism.org/docs/building/tracks/new/implement-tooling)
+- [ ] [Prepare for open source contributions from strangers](https://exercism.org/docs/building/tracks/new/prepare-for-contributions)
+
+Once you've finished a task, you can check them in this list.
+
+## Questions
 
 Please ask if you have any questions or if anything is confusing!
