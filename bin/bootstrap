@@ -13,7 +13,7 @@ track_id = ENV['TRACK_ID']
 language = ENV['LANGUAGE']
 
 if !(track_id && language)
-  STDERR.puts "\nUsage: TRACK_ID=<id> LANGUAGE=<language> bin/bootstrap"
+  STDERR.puts "\nUsage: LANGUAGE=<language> TRACK_ID=<id> bin/bootstrap"
   exit 1
 end
 
