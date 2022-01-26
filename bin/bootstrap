@@ -117,7 +117,7 @@ repo_options = {
   :has_projects => false,
   :has_wiki => false,
 }
-repo = client.edit_repository("exercism/%s" % track_id)
+repo = client.edit_repository("exercism/%s" % track_id, repo_options)
 
 client.put('/repos/exercism/%s/topics' % track_id, {names: ["exercism-track"], accept: 'application/vnd.github.mercy-preview+json'})
 
