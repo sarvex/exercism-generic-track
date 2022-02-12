@@ -13,7 +13,7 @@ track_id = ENV['TRACK_ID']
 language = ENV['LANGUAGE']
 
 if !(track_id && language)
-  STDERR.puts "\nUsage: LANGUAGE=<language> TRACK_ID=<id> bin/bootstrap"
+  STDERR.puts "\nUsage: LANGUAGE=<language> TRACK_ID=<id> USERNAMES=<comma,separated,list> bin/bootstrap"
   exit 1
 end
 
@@ -128,7 +128,13 @@ team_options = {
   :parent_team_id => 1399433,
 }
 team = client.create_team('exercism', team_options.merge(accept: 'application/vnd.github.hellcat-preview+json'))
+user = client.get("/user")
+client.delete("/orgs/exercism/teams/#{track_id}/memberships/#{user.login}")
 client.add_team_repository(team.id, 'exercism/%s' % track_id, permission: 'push')
+
+ENV['USERNAMES'].to_s.split(",").each do |username|
+  client.put("/orgs/exercism/teams/#{track_id}/memberships/#{username}", { role: "member" })
+end
 
 maintainers_admin_team = client.get('/orgs/exercism/teams/maintainers-admin')
 client.add_team_repository(maintainers_admin_team.id, 'exercism/%s' % track_id, permission: 'maintain')
