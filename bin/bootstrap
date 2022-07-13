@@ -159,9 +159,13 @@ user = client.get("/user")
 client.delete("/orgs/exercism/teams/#{track_id}/memberships/#{user.login}")
 client.add_team_repository(team.id, 'exercism/%s' % track_id, permission: 'push')
 
-ENV['USERNAMES'].to_s.split(",").each do |username|
-  client.put("/orgs/exercism/teams/#{track_id}/memberships/#{username}", { role: "member" })
-end
-
 maintainers_admin_team = client.get('/orgs/exercism/teams/maintainers-admin')
 client.add_team_repository(maintainers_admin_team.id, 'exercism/%s' % track_id, permission: 'maintain')
+
+ENV['USERNAMES'].to_s.split(",").each do |username|
+  begin
+    client.put("/orgs/exercism/teams/#{track_id}/memberships/#{username}", { role: "member" })
+  rescue
+    # if a user can't be added, just keep going
+  end
+end
